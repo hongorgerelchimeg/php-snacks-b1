@@ -55,10 +55,41 @@
                 <h3><?= $arr_Partite[$_i]['casa']['nome'] ?> </h3> - 
                 <h3><?= $arr_Partite[$_i]['ospite']['nome'] ?> </h3> |
                 <span><?= $arr_Partite[$_i]['casa']['punti'] ?> </span> - 
-                <span><?= $arr_Partite[$_i]['casa']['punti'] ?> </span> 
+                <span><?= $arr_Partite[$_i]['ospite']['punti'] ?> </span> 
                 <?php
             } ?>
-           
+        </div>
+
+        <div class="snack">
+            <h1>Snack 2</h1>
+            <form action="" method="POST">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="username">
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="insert your email">
+                <label for="age"></label>
+                <input type="number" name="age" id="age" placeholder="Your age?">
+                <button>Login</button>
+            </form>
+            <?php
+               
+               if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['age'])) {
+                
+                    if (strlen($_POST['name']) > 3) {
+                        if ($_POST['age'] > 17) {
+                            echo '<br><br> Accesso riuscito';
+                        } else {
+                            echo '<br><br> Accesso negato must +17!';
+                        }
+                        
+                    } else {
+                        echo '<br><br> Accesso negato';
+                       }
+
+                //    if ($_POST['name'])
+                
+               } 
+            ?>
         </div>
     </div>
     
