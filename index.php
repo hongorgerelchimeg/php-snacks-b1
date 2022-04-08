@@ -2,18 +2,6 @@
     // Snack 1
     // Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
     // Olimpia Milano - Cantù | 55-60
-    // Snack 2
-    // Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
-    // Snack 4
-    // Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
-    // Snack 5
-    // Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
-?>
-
-<?php 
-    // Snack 1
-    // Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
-    // Olimpia Milano - Cantù | 55-60
    $arr_Partite = [
        [
            'casa' => [
@@ -29,9 +17,33 @@
    ]
 ?>
 
-<?php 
+<?php
     // Snack 2
     // Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+?>
+
+<?php 
+    // Snack 4
+    // Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+    $arrNumeri = [];
+    // var_dump($arrNumeri);
+    // var_dump(!in_array(3, $arrNumeri));
+    // var_dump($random_number = rand(1, 100))
+        $_i = 0;
+    while ($_i < 15) {
+        $random_number = rand(1, 100);
+        if (!in_array($random_number, $arrNumeri)) {
+            array_push($arrNumeri, $random_number);
+            $_i++;
+        }
+    }
+?>
+
+<?php 
+    // Snack 5
+    // Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
+    $text = " Lorem, ipsum dolor sit. amet consectetur adipisicing elit. Est commodi nobis impedit corrupti. optio aliquid a dignissimos incidunt recusandae! Voluptatum dolores deserunt voluptates excepturi dolore odit eligendi eius mollitia et?, Lorem, ipsum dolor sit. amet consectetur adipisicing elit. Est commodi nobis impedit corrupti optio aliquid a dignissimos incidunt. recusandae! Voluptatum dolores deserunt voluptates excepturi dolore. odit eligendi eius mollitia et?";
+    $paragraphs = explode(".", $text);
 ?>
 
 
@@ -89,6 +101,27 @@
                 //    if ($_POST['name'])
                 
                } 
+            ?>
+        </div>
+
+               
+        <div class="snack">
+            <h1>Snack 4</h1>
+            <?php  
+               echo "<ul>";
+               foreach ($arrNumeri as $number) {
+                   echo "<li>".$number."</li>";
+               };
+               echo "</ul>";
+            ?>
+        </div>
+
+        <div class="snack">
+            <h1>Snack 5</h1>
+            <?php 
+                foreach ($paragraphs as $p) {
+                    echo "<p>".$p."</p>";
+                };
             ?>
         </div>
     </div>
